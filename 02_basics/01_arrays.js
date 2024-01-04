@@ -19,7 +19,7 @@ const myArr2 = new Array(1, 5, 8, 4)
 // console.log(myArr.includes(14));
 // console.log(myArr.indexOf(11));
 
-// const newArr = myArr.join()
+// const newArr = myArr.join() //join() returns an string
 // console.log(myArr);
 // console.log(newArr);
 // console.log(typeof newArr);
