@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Chai aur Code</h1>
+    <div id="text"></div>
+    <button
+      id="start"
+      style="
+        padding: 6px 23px;
+        font-size: 16px;
+        border-radius: 8px;
+        color: white;
+        background-color: gray;
+        cursor: pointer;
+      "
+    >
+      Start
+    </button>
+    <button
+      id="stop"
+      style="
+        margin: 0px 10px;
+        padding: 6px 23px;
+        font-size: 16px;
+        border-radius: 8px;
+        color: white;
+        background-color: gray;
+        cursor: pointer;
+      "
+    >
+      Stop
+    </button>
+  </body>
+  <script>
+    let intervalId;
+    const sayDate = function (str) {
+      console.log(str, new Date().toTimeString());
+    };
+
+    document.querySelector("#start").addEventListener("click", function () {
+      intervalId = setInterval(sayDate, 1000, "GuruPratatGupta");
+      
+    });
+
+    document.querySelector("#stop").addEventListener("click", function () {
+       clearInterval(intervalId);
+      
+    });
+  </script>
+</html>

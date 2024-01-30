@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <h1>Chai aur Code</h1> 
+   <div id="text"></div>
+   <button id="stop" style="padding: 6px 23px; font-size: 16px; border-radius: 8px;color: white;background-color: gray;cursor: pointer;">Stop</button>
+
+</body>
+<script>
+    /*
+    setTimeout(function(){
+        console.log("Alok");
+    },2000)
+    */
+
+    /*
+    const sayHiGuru = function(){
+        console.log('Focus on it');
+    }
+    setTimeout(sayHiGuru,2000)      // function passed
+    */
+
+   setTimeout(function(){
+       document.querySelector('h1').innerHTML = 'Focus on it'
+   },2000)
+
+
+   const addText = function (){
+      const h3 = document.createElement('h3')
+      h3.innerHTML = 'hello World.....guru here'
+      document.querySelector('#text').appendChild(h3)
+    }
+   const stopme =  setTimeout(addText,2000)
+
+   // clearTimeout(stopme)
+
+   document.querySelector('#stop').addEventListener('click', function(){
+    clearTimeout(stopme)
+    console.log('STOPPED');
+   })
+
+</script>
+</html>

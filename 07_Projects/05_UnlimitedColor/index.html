@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Unlimited Color Displayed</title>
+  </head>
+  <body style="background-color: #212121; color: #fff">
+    <h1>Start should change the Background color every second</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+  </body>
+  <script>
+    //generate a random color
+
+const randomColor = function () {
+  const hex = '0123456789ABCDEF';
+  let color = '#';
+  for (let i = 0; i < 6; i++) {
+    color += hex[Math.floor(Math.random() * 16)];
+  }
+  return color;
+};
+
+let intervalId;                //value assigned nii h so intervalId = undefined ,which is considerd as 'false' value
+console.log( !intervalId);
+const startChangingColor = function () {
+  if (!intervalId) {
+    intervalId = setInterval(changeBgColor, 1000);
+  }
+
+  function changeBgColor() {
+    document.body.style.backgroundColor = randomColor();
+  }
+};
+const stopChangingColor = function () {
+  clearInterval(intervalId);
+  intervalId = null;     //means intervalId ki value ko 'false'kr diya gya h
+};
+
+document.querySelector('#start').addEventListener('click', startChangingColor);
+
+document.querySelector('#stop').addEventListener('click', stopChangingColor);
+
+
+
+
+    /*  ---------this is my code-----------
+    let randomNum;
+    const str = "1234567890abcdef";
+    const arr = Array.from(str);
+
+    let color = "#";
+
+    const randomColorGen = function () {
+      for (i = 0; i < 6; i++) {
+        randomNum = Math.floor(Math.random() * 16);
+        color += arr[randomNum];
+      }
+      console.log(color);
+      document.body.style.backgroundColor = color;
+      color = "#";
+    };
+
+    let startColorGen;
+    document.querySelector("#start").addEventListener("click", function () {
+      startColorGen = setInterval(randomColorGen, 500);
+    });
+
+    document.querySelector("#stop").addEventListener("click", function () {
+      clearInterval(startColorGen);
+    });
+    */
+  </script>
+</html>
